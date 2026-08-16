@@ -1,0 +1,98 @@
+# Catatan Error - Latihan 01
+
+## Error 1 - Variabel belum dibuat
+
+Kode:
+nama = jirjat
+
+Error:
+NameError: name 'jirjat' is not defined
+
+Penyebab:
+Python menganggap jirjat sebagai nama variabel.
+
+Perbaikan:
+nama = "jirjat"
+
+
+## Error 2 - Nama variabel memakai spasi
+
+Kode:
+tempat tinggal = "ny"
+
+Error:
+SyntaxError
+
+Penyebab:
+Nama variabel tidak boleh menggunakan spasi.
+
+Perbaikan:
+rumah = "ny"
+
+
+## Error 3 - Koma pada angka desimal
+
+Kode:
+tinggi = 171,2
+
+Hasil:
+tuple
+
+Penyebab:
+Python menggunakan titik untuk angka desimal.
+
+Perbaikan:
+tinggi = 171.2
+
+
+## Error 4 - String dan integer
+
+Kode:
+a = 3
+b = "7"
+print(a + str(b))
+
+Error:
+TypeError
+
+Penyebab:
+a adalah integer, sedangkan str(b) adalah string.
+Python tidak bisa menjumlahkan integer dengan string.
+
+Perbaikan:
+print(a + int(b))
+
+
+## Perbedaan input() dan int(input())
+
+input() menghasilkan string.
+
+Contoh:
+umur = input("umur = ")
+
+Jika memasukkan 21:
+umur = "21"
+
+Maka:
+umur + umur
+menghasilkan:
+2121
+
+
+Sedangkan:
+
+umur = int(input("umur = "))
+
+Jika memasukkan 21:
+umur = 21
+
+Maka:
+umur + umur
+menghasilkan:
+42
+
+
+## Catatan
+
+Saya sedang belajar Python dari nol dan menyimpan
+proses, kesalahan, serta perbaikan saya di GitHub.
