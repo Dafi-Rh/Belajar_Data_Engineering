@@ -1,0 +1,100 @@
+Day 2 - while
+
+1. Coba while untuk menghitung mundur
+
+angka = 10
+while angka >=9:
+    print(angka)
+    angka-=9
+
+Hasil cuma 10 karena setelah itu angka jadi 1 dan 1 >= 9 salah.
+
+2. Mencoba kondisi lain
+
+while angka >= 11:
+
+Tidak menghasilkan apa-apa karena 10 >= 11 salah dari awal.
+
+3. Error saat mencoba membuat while
+
+while angka total = 40
+SyntaxError: invalid syntax
+
+while angka != 40 total
+SyntaxError: invalid syntax
+
+while angka != 0
+SyntaxError: expected ':'
+
+Lupa tanda : di akhir while.
+
+4. Error kurung dan tanda kutip
+
+int(input("massukan angka lagi = ")
+
+SyntaxError: '(' was never closed
+
+print("selesai)
+
+SyntaxError: unterminated string literal
+
+5. Mencoba total tapi salah karena total selalu dibuat 0 di dalam while
+
+total = 0
+
+while angka != 0:
+    print("masukkan", angka)
+    angka = int(input("masukkan angka lagi = "))
+    total = 0
+    print("selesai")
+
+Hasil akhirnya total tetap 0.
+
+6. Salah memasukkan angka desimal
+
+Masukkan: 0,9
+
+ValueError: invalid literal for int() with base 10: '0,9'
+
+Karena int() untuk bilangan bulat. Kalau mau desimal nanti bisa pakai float().
+
+7. Mencoba memasukkan rumus ke input
+
+Masukkan: 5+5
+
+ValueError: invalid literal for int() with base 10: '5+5'
+
+Input dibaca sebagai teks lalu int() mencoba mengubah seluruh "5+5" menjadi angka.
+
+8. Total yang benar
+
+total = 0
+angka = int(input("angka = "))
+
+while angka != 0:
+    total = total + angka
+    angka = int(input("masukkan angka lagi = "))
+
+print("total =", total)
+
+Contoh:
+5 + 5 + 4 + 5 + 6 + 9 = 34
+
+9. Belajar menghitung jumlah angka
+
+jumlah = 0
+angka = int(input("angka = "))
+
+while angka != 0:
+    jumlah = jumlah + 1
+    angka = int(input("masukkan angka lagi = "))
+
+print("jumlah angka =", jumlah)
+
+Setiap angka yang masuk dihitung 1.
+Misalnya masuk 5, 6, 10:
+jumlah = 3
+
+Catatan:
+- total = total + angka -> menjumlahkan nilai angka
+- jumlah = jumlah + 1 -> menghitung berapa data yang masuk
