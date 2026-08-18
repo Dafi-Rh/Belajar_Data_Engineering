@@ -1,0 +1,67 @@
+Catatan Error - Latihan 03
+
+1. Lupa tanda :
+
+Kode:
+while angka <=10
+
+Error:
+SyntaxError: expected ':'
+
+Perbaikan:
+while angka <=10:
+
+
+2. range(10, 1) tidak menghasilkan apa-apa
+
+Kode:
+for angka in range(10, 1):
+    print(angka)
+
+Hasil:
+tidak ada output
+
+Catatan:
+range() default-nya bergerak naik, sedangkan angka mulai dari 10 dan berhenti di 1.
+
+
+3. Ada spasi di awal
+
+Kode:
+ for angka in range(3,20):
+
+Error:
+IndentationError: unexpected indent
+
+Perbaikan:
+for angka in range(3,20):
+
+
+4. Lupa tanda : pada for
+
+Kode:
+for angka in range(3,20)
+
+Error:
+SyntaxError: expected ':'
+
+Perbaikan:
+for angka in range(3,20):
+
+
+5. Latihan angka genap
+
+Kode:
+for angka in range(3, 20):
+    if angka % 2 == 0:
+        print(angka)
+
+Hasil:
+4
+6
+8
+10
+12
+14
+16
+18
