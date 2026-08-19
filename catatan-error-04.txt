@@ -1,0 +1,205 @@
+Catatan Error - Latihan 04
+
+1. Percobaan total pertama
+
+Kode:
+total = 0
+for angka in range(3, 26):
+    total = total + angka
+
+Catatan:
+Hasil pertama adalah 322.
+
+
+2. Menjalankan loop lagi tanpa mengosongkan total
+
+Kode:
+for angka in range(3, 26):
+    total = total + angka
+
+Hasil:
+total = 644
+
+Catatan:
+Nilai total sebelumnya masih tersimpan, jadi 322 ditambah 322 lagi.
+
+
+3. Percobaan range berikutnya
+
+Kode:
+for angka in range(7, 20):
+    total = total + angka
+print(angka)
+print("total=", total)
+
+Catatan:
+angka terakhir yang tampil adalah 19.
+Nilai total terus memakai nilai sebelumnya.
+
+
+4. Percobaan menampilkan urutan angka sebelum total
+
+Catatan:
+Saya mencoba memakai while untuk menampilkan angka sebelum total,
+tetapi error. Akhirnya lebih mudah menggunakan print(angka) di dalam for
+dan print total di luar for.
+
+
+5. Lupa mengatur total kembali ke 0
+
+Catatan:
+Kalau ingin perhitungan baru, total harus dibuat lagi:
+total = 0
+
+
+6. Percobaan angka genap dan total
+
+Kode:
+for angka in range(4, 18):
+    if angka % 2 == 0:
+        print(angka)
+        total = total + angka
+
+Hasil:
+4
+6
+8
+10
+12
+14
+16
+total 70
+
+
+7. Percobaan membuat list
+
+Kode:
+nama ["dodit", "didi", "dudu")
+
+Error:
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+
+Perbaikan:
+nama = ["dodit", "didi", "dudu"]
+
+
+8. Tidak memakai tanda =
+
+Kode:
+nama ["dodit", "didi", "dudu"]
+
+Error:
+NameError: name 'nama' is not defined
+
+Perbaikan:
+nama = ["dodit", "didi", "dudu"]
+
+
+9. Index list terlalu besar
+
+Kode:
+nama = ["dodit", "didi", "dudu"]
+print(nama[3])
+
+Error:
+IndexError: list index out of range
+
+Catatan:
+Index dimulai dari 0, jadi list ini hanya punya index 0, 1, dan 2.
+
+
+10. Mengubah isi list
+
+Kode:
+nama[0] = "bubu"
+
+Hasil:
+bubu
+
+
+11. Menambah data dengan append
+
+Kode:
+nama.append("jaja")
+
+Hasil:
+['bubu', 'didi', 'dudu', 'jaja']
+
+
+12. Print list di dalam for
+
+Kode:
+for orang in nama:
+    print(nama)
+
+Hasil:
+Seluruh list tercetak berulang kali.
+
+Catatan:
+Karena yang dicetak adalah nama, bukan orang.
+
+
+13. Print isi list dengan for
+
+Kode:
+for orang in nama:
+    print(orang)
+
+Hasil:
+bubu
+didi
+dudu
+jaja
+
+
+14. Percobaan for dengan range
+
+Kode:
+angka = [10, 20, 30, 40, 50]
+
+for angka in range:
+    print(angka)
+    total = 0 + angka
+
+Error:
+TypeError: 'type' object is not iterable
+
+Catatan:
+range adalah fungsi/type, bukan list yang sedang ingin diproses.
+
+
+15. Mencoba menjumlahkan list langsung
+
+Kode:
+for nilai in angka:
+    print(angka)
+    total = 0 + angka
+
+Error:
+TypeError: unsupported operand type(s) for +: 'int' and 'list'
+
+Catatan:
+angka adalah seluruh list [10, 20, 30, 40, 50].
+Yang harus dijumlahkan adalah satu nilai di dalam list, yaitu nilai.
+
+
+16. Berhasil menjumlahkan isi list
+
+Kode:
+angka = [10, 20, 30, 40, 50]
+
+total = 0
+
+for nilai in angka:
+    print(nilai)
+    total = total + nilai
+
+print("total =", total)
+
+Hasil:
+10
+20
+30
+40
+50
+total = 150
