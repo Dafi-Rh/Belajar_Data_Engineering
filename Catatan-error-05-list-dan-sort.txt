@@ -1,0 +1,49 @@
+CATATAN ERROR - LATIHAN 02
+Materi: List, for, fungsi bawaan, operasi list, dan sort()
+
+1. for total in range:
+   TypeError: 'type' object is not iterable
+   Pelajaran: range harus digunakan sebagai pemanggilan, misalnya range(5).
+
+2. print(sum(len(angka)))
+   TypeError: 'int' object is not iterable
+   Pelajaran: len(angka) menghasilkan integer, sedangkan sum() membutuhkan iterable.
+
+3. print(sum(angka)):
+   SyntaxError: invalid syntax
+   Pelajaran: tanda ':' tidak diperlukan setelah print().
+
+4. for angka:
+   SyntaxError: invalid syntax
+   Pelajaran: for membutuhkan pola seperti: for nilai in angka:
+
+5. def:
+   SyntaxError: invalid syntax
+   Pelajaran: def harus diikuti nama function dan tanda kurung.
+
+6. angka = [,3, 5, 0, 9, 7,)
+   SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+   Pelajaran: kurung pembuka dan penutup harus cocok.
+
+7. angka.sort(angka)
+   TypeError: sort() takes no positional arguments
+   Pelajaran: cukup gunakan angka.sort().
+
+8. angka.sort(reverse=true)
+   NameError: name 'true' is not defined
+   Pelajaran: boolean Python ditulis True atau False dengan huruf awal kapital.
+
+9. angka.pop(6)
+   IndexError: pop index out of range
+   Pelajaran: index harus berada dalam rentang index yang tersedia.
+
+MATERI YANG SUDAH DICOBA:
+- list
+- for loop
+- len(), max(), min(), sum()
+- menghitung total dengan loop
+- rata-rata dengan sum()/len()
+- in dan not in
+- if/else pada list
+- remove(), pop(), insert()
+- sort() dan sort(reverse=True)
