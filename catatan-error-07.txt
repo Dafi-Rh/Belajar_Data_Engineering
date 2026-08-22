@@ -1,0 +1,110 @@
+Catatan Error - Latihan 07
+
+1. Mengambil dictionary tanpa tanda kutip pada key
+
+Kode:
+print(biodata[nama])
+
+Error:
+NameError: name 'nama' is not defined
+
+Perbaikan:
+print(biodata["nama"])
+
+Catatan:
+"nama" adalah key dictionary, jadi ditulis sebagai string.
+
+2. Menggunakan nama variabel "type"
+
+Kode:
+for type in biodata:
+    print(type)
+
+Kemudian:
+print(type(biodata))
+
+Error:
+TypeError: 'str' object is not callable
+
+Catatan:
+type adalah fungsi bawaan Python. Variabel bernama type menimpa fungsi tersebut.
+
+Perbaikan:
+del type
+
+Setelah itu:
+print(type(biodata))
+
+Hasil:
+<class 'dict'>
+
+3. Percobaan if dan elif yang belum lengkap
+
+Kode:
+if biodata["umur"] == 17:
+    print("asisten kuli")
+elif >= 20:
+    print("kuli pro")
+
+Error:
+SyntaxError: invalid syntax
+
+Perbaikan:
+elif biodata["umur"] >= 20:
+
+Catatan:
+elif harus mempunyai kondisi lengkap.
+
+4. Dictionary orang
+
+Data:
+orang = {
+    "Owi": 17,
+    "Joni": 20,
+    "Wowo": 16
+}
+
+Loop:
+for nama, umur in orang.items():
+    print(nama, umur)
+
+Hasil:
+Owi 17
+Joni 20
+Wowo 16
+
+5. Salah mengambil key "umur"
+
+Kode:
+if orang["umur"] <= 20:
+    print("nama", "kuli lv1")
+
+Error:
+KeyError: 'umur'
+
+Catatan:
+Pada dictionary orang, key-nya adalah Owi, Joni, dan Wowo.
+Tidak ada key "umur".
+
+Perbaikan:
+for nama, umur in orang.items():
+    if umur <= 20:
+        print(nama, "kuli lv1")
+
+Hasil:
+Owi kuli lv1
+Joni kuli lv1
+Wowo kuli lv1
+
+6. Mengubah batas umur
+
+Kode:
+for nama, umur in orang.items():
+    if umur <= 19:
+        print(nama, "kuli lv1")
+
+Hasil:
+Owi kuli lv1
+Wowo kuli lv1
+
+Karena Joni berumur 20, jadi tidak masuk kondisi <= 19.
