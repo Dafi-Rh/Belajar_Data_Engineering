@@ -1,0 +1,100 @@
+Catatan Error - Latihan 08
+
+1. Mengakses dictionary dengan angka
+
+Kode:
+print(bio_data[1])
+
+Error:
+KeyError: 1
+
+Catatan:
+bio_data adalah dictionary, jadi akses utamanya menggunakan key seperti
+bio_data["nama"], bukan index angka seperti pada list.
+
+2. SyntaxError pada for
+
+Kode:
+for namain bio_data["nama"]:
+
+Error:
+SyntaxError: invalid syntax
+
+Perbaikan:
+for nama in bio_data["nama"]:
+    print(nama)
+
+3. Salah mencoba memasangkan dua list dengan sintaks for
+
+Kode:
+for nama in bio_data["nama"], umur in bio_data["umur"]:
+    print(nama, umur)
+
+Error:
+NameError: name 'umur' is not defined
+
+Catatan:
+Sintaks tersebut tidak membentuk pasangan nama dan umur dengan benar.
+
+4. Memasangkan nama dan umur menggunakan index
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    print(bio_data["nama"][i], bio_data["umur"][i])
+
+Hasil:
+Owi 17
+Joni 20
+Wowo 16
+
+5. Mencari umur 18 tahun atau lebih
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] >= 18:
+        print(bio_data["nama"][i])
+
+Hasil:
+Joni
+
+6. Mencari umur di bawah 18 tahun
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] < 18:
+        print(bio_data["nama"][i])
+
+Hasil:
+Owi
+Wowo
+
+7. Percobaan kondisi menggunakan i dari loop sebelumnya
+
+Kode:
+if bio_data["umur"][i] < 18:
+    print(bio_data["nama"][i])
+
+Hasil:
+Wowo
+
+Catatan:
+Saat dijalankan sendiri setelah loop sebelumnya, i masih menyimpan nilai terakhir,
+yaitu 2. Jadi yang diperiksa hanya data index 2 (Wowo).
+Untuk memeriksa semua data, kondisi harus diletakkan di dalam for.
+
+8. Menggabungkan if dan else
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] >= 18:
+        print(bio_data["nama"][i], "dewasa")
+    else:
+        print(bio_data["nama"][i], "belum dewasa")
+
+Hasil:
+Owi belum dewasa
+Joni dewasa
+Wowo belum dewasa
+
+Catatan:
+zip() belum dipelajari pada latihan ini dan akan dilanjutkan pada sesi berikutnya.
