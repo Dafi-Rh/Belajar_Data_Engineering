@@ -1,0 +1,192 @@
+Catatan Error - Latihan 08
+
+1. Mengakses dictionary dengan angka
+
+Kode:
+print(bio_data[1])
+
+Error:
+KeyError: 1
+
+Catatan:
+bio_data adalah dictionary, jadi akses utamanya menggunakan key seperti
+bio_data["nama"], bukan index angka seperti pada list.
+
+2. SyntaxError pada for
+
+Kode:
+for namain bio_data["nama"]:
+
+Error:
+SyntaxError: invalid syntax
+
+Perbaikan:
+for nama in bio_data["nama"]:
+    print(nama)
+
+3. Salah mencoba memasangkan dua list dengan sintaks for
+
+Kode:
+for nama in bio_data["nama"], umur in bio_data["umur"]:
+    print(nama, umur)
+
+Error:
+NameError: name 'umur' is not defined
+
+Catatan:
+Sintaks tersebut tidak membentuk pasangan nama dan umur dengan benar.
+
+4. Menggunakan index untuk memasangkan nama dan umur
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    print(bio_data["nama"][i], bio_data["umur"][i])
+
+Hasil:
+Owi 17
+Joni 20
+Wowo 16
+
+5. Mencari umur 18 tahun atau lebih
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] >= 18:
+        print(bio_data["nama"][i])
+
+Hasil:
+Joni
+
+6. Mencari umur di bawah 18 tahun
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] < 18:
+        print(bio_data["nama"][i])
+
+Hasil:
+Owi
+Wowo
+
+7. Percobaan kondisi menggunakan i dari loop sebelumnya
+
+Kode:
+if bio_data["umur"][i] < 18:
+    print(bio_data["nama"][i])
+
+Hasil:
+Wowo
+
+Catatan:
+Saat dijalankan sendiri setelah loop sebelumnya, i masih menyimpan nilai terakhir,
+yaitu 2. Jadi yang diperiksa hanya data index 2 (Wowo).
+Untuk memeriksa semua data, kondisi harus diletakkan di dalam for.
+
+8. Menggabungkan if dan else
+
+Kode:
+for i in range(len(bio_data["nama"])):
+    if bio_data["umur"][i] >= 18:
+        print(bio_data["nama"][i], "dewasa")
+    else:
+        print(bio_data["nama"][i], "belum dewasa")
+
+Hasil:
+Owi belum dewasa
+Joni dewasa
+Wowo belum dewasa
+
+9. IndentationError
+
+Percobaan:
+ kota = ["Lampung", "Bandung", "Ngawi", "Madiun"]
+
+Error:
+IndentationError: unexpected indent
+
+Catatan:
+Ada spasi yang tidak semestinya di awal baris.
+Di luar blok, tulis tanpa spasi di depan:
+kota = ["Lampung", "Bandung", "Ngawi", "Madiun"]
+
+10. Salah mencetak saat menggunakan zip()
+
+Percobaan:
+for orang, usia, daerah in zip(nama, umur, kota):
+    print(nama, umur, "tahun", "dari", kota)
+
+Hasilnya seluruh list tercetak berulang.
+
+Perbaikan:
+for orang, usia, daerah in zip(nama, umur, kota):
+    print(orang, usia, "tahun", "dari", daerah)
+
+Catatan:
+nama, umur, kota adalah seluruh list.
+orang, usia, daerah adalah satu data pada setiap putaran loop.
+
+11. zip() dengan panjang list berbeda
+
+Contoh:
+nama = ["Owi", "Joni", "Wowo"]
+umur = [17, 20, 16, 25]
+
+zip() hanya menghasilkan:
+Owi 17
+Joni 20
+Wowo 16
+
+Angka 25 tidak ikut karena zip() berhenti saat iterable terpendek habis.
+
+12. Kesalahan saat menghitung counter
+
+Percobaan:
+for orang, usia in zip(nama, umur):
+    total = jumlah + 1
+    if usia >= 18:
+        print(total, "orang")
+
+Catatan:
+Counter harus ditambah hanya ketika kondisi terpenuhi.
+Variabel jumlah/total juga harus diperbarui.
+
+Perbaikan:
+jumlah = 0
+
+for orang, usia in zip(nama, umur):
+    if usia >= 18:
+        jumlah = jumlah + 1
+
+print(jumlah, "orang")
+
+13. Konsep counter
+
+jumlah = 0
+jumlah = jumlah + 1
+
+Artinya:
+ambil nilai jumlah saat ini, tambahkan 1, lalu simpan kembali ke jumlah.
+
+Contoh:
+0 -> 1
+1 -> 2
+2 -> 3
+
+Bentuk singkat:
+jumlah += 1
+
+14. Menghitung dewasa dan belum dewasa
+
+Kode:
+dewasa = 0
+belum = 0
+
+for orang, usia in zip(nama, umur):
+    if usia >= 18:
+        dewasa = dewasa + 1
+    else:
+        belum = belum + 1
+
+Hasil:
+dewasa = 1 orang
+belum = 2 orang
