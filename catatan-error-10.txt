@@ -1,0 +1,185 @@
+CATATAN ERROR - BELAJAR 10 FUNCTION
+
+File latihan: Belajar-10-function.py
+Catatan ini mempertahankan error dari percobaan asli sebagai dokumentasi proses belajar.
+
+1. Missing colon pada function
+Percobaan:
+def tambah(a, b)
+
+Error:
+SyntaxError: expected ':'
+
+Pelajaran:
+Definisi function harus diakhiri dengan tanda titik dua (:).
+Contoh:
+def tambah(a, b):
+
+2. Salah indentasi di awal baris
+Percobaan:
+ def tambah(a, b);
+
+Error:
+IndentationError: unexpected indent
+
+Pelajaran:
+Jangan memberi spasi/indentasi di awal definisi function jika tidak berada di dalam blok lain.
+Selain itu, gunakan ':' bukan ';'.
+
+3. Indentasi tidak semestinya
+Percobaan:
+ def tambah(a, b):
+
+Error:
+IndentationError: unexpected indent
+
+Pelajaran:
+Function utama harus dimulai dari posisi awal baris apabila tidak berada di dalam blok lain.
+
+4. Missing colon pada function sapa
+Percobaan:
+def sapa(nama = "teman")
+
+Error:
+SyntaxError: expected ':'
+
+Pelajaran:
+Parameter default tetap harus diikuti ':' pada akhir definisi function.
+
+5. Variable string tidak diberi tanda kutip
+Percobaan:
+sapa(joni)
+
+Error:
+NameError: name 'joni' is not defined
+
+Pelajaran:
+Jika ingin mengirim teks/string sebagai argument, gunakan tanda kutip:
+sapa("joni")
+
+6. Missing colon pada function pangkat
+Percobaan:
+def pangkat(a, b=2)
+
+Error:
+SyntaxError: expected ':'
+
+Pelajaran:
+Definisi function harus diakhiri ':'.
+
+7. Salah indentasi pada function pangkat
+Percobaan:
+ def pangkat(a, b=2):
+
+Error:
+IndentationError: unexpected indent
+
+Pelajaran:
+Jangan memberi indentasi pada definisi function di level teratas.
+
+8. Nama variable salah / typo
+Percobaan:
+grde("owi", 60)
+
+Error:
+NameError: name 'grde' is not defined. Did you mean: 'grade'?
+
+Pelajaran:
+Nama function harus ditulis persis sama seperti saat didefinisikan.
+
+9. Variable owi tidak didefinisikan sebagai string
+Percobaan:
+grade(owi, 70)
+
+grade(owi,60)
+
+Error:
+NameError: name 'owi' is not defined
+
+Pelajaran:
+Nama harus diberi tanda kutip jika dimaksudkan sebagai string:
+grade("owi", 70)
+
+10. Variable nilai belum tersedia
+Percobaan:
+hasil = grade("wowo", 45)
+print(hasil, nilai)
+
+Error:
+NameError: name 'nilai' is not defined
+
+Pelajaran:
+Parameter function seperti 'nilai' hanya tersedia di dalam function. Di luar function, gunakan variable yang memang sudah dibuat, misalnya hasil.
+
+11. Unpacking tidak sesuai jumlah nilai
+Percobaan:
+hasil = "D"
+nama, status = hasil
+
+Error:
+ValueError: not enough values to unpack (expected 2, got 1)
+
+Pelajaran:
+Jumlah variable di sebelah kiri harus sesuai dengan jumlah item yang dikembalikan.
+Karena hasil hanya berisi satu string "D", tidak bisa langsung di-unpack menjadi dua variable.
+
+12. Missing colon pada print
+Percobaan:
+print(nama):
+
+Error:
+SyntaxError: invalid syntax
+
+Pelajaran:
+Pemanggilan print() biasa tidak membutuhkan ':'.
+
+13. Function tanpa nama
+Percobaan:
+def ():
+
+Error:
+SyntaxError: invalid syntax
+
+Pelajaran:
+Setelah kata 'def' harus ada nama function.
+
+14. Function sapa tanpa colon
+Percobaan:
+def sapa()
+
+Error:
+SyntaxError: expected ':'
+
+Pelajaran:
+Definisi function harus memakai ':' di akhir baris.
+
+15. Percobaan loop dengan data yang salah
+Percobaan:
+for orang, value, poin in nama, nilai, status:
+
+Error pertama:
+NameError: name 'poin' is not defined
+
+Error kedua setelah diganti:
+ValueError: too many values to unpack (expected 3)
+
+Pelajaran:
+Struktur for dan unpacking harus sesuai dengan bentuk data yang sedang di-iterasi.
+Jangan menganggap beberapa variable terpisah otomatis menjadi satu kumpulan data yang cocok untuk for.
+
+16. KeyboardInterrupt
+Percobaan menggunakan function pangkat sempat dihentikan dengan KeyboardInterrupt.
+
+Pelajaran:
+KeyboardInterrupt biasanya muncul ketika eksekusi sedang dihentikan secara manual, misalnya dengan Ctrl+C.
+
+KESIMPULAN LATIHAN
+- Sudah mencoba membuat function sederhana.
+- Sudah memakai parameter.
+- Sudah memakai default parameter.
+- Sudah memahami perbedaan print dan return.
+- Sudah memakai if/elif/else di dalam function.
+- Sudah mengembalikan lebih dari satu nilai dari function.
+- Sudah mencoba unpacking tuple hasil return.
+- Sudah mulai belajar scope variable.
+- Sudah berlatih membaca dan memahami NameError, SyntaxError, IndentationError, ValueError, dan KeyboardInterrupt.
