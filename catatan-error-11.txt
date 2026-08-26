@@ -1,0 +1,158 @@
+Catatan Error - Latihan 11
+
+Materi:
+Function yang menerima list, for di dalam function, total/counter,
+return, max(), serta logika mencari nilai terbesar dan terkecil.
+
+1. Salah menulis assignment
+Kode:
+total 0
+
+Error:
+SyntaxError: invalid syntax
+
+Perbaikan:
+total = 0
+
+Catatan:
+Assignment Python menggunakan tanda =.
+
+2. return berada di luar function
+Kode:
+def jumlahkan(angka):
+    total = 0
+    for nilai in angka:
+        total = total + nilai
+return total
+
+Error:
+SyntaxError: 'return' outside function
+
+Perbaikan:
+return harus tetap berada di dalam blok function:
+    return total
+
+3. Salah ketik nama function
+Kode:
+hasil = jumlakan(5, 3, 7, 2)
+
+Error:
+NameError: name 'jumlakan' is not defined
+
+Perbaikan:
+hasil = jumlahkan([5, 3, 7, 2])
+
+4. Salah memberikan jumlah argument
+Kode:
+hasil = jumlahkan(5, 3, 7, 2)
+
+Error:
+TypeError: jumlahkan() takes 1 positional argument but 4 were given
+
+Catatan:
+Function didefinisikan dengan satu parameter:
+def jumlahkan(angka):
+
+Karena function tersebut menerima satu data berupa list, panggil dengan:
+jumlahkan([5, 3, 7, 2])
+
+5. Function jumlahkan berhasil
+Kode:
+hasil = jumlahkan([5, 3, 7, 2])
+print(hasil)
+
+Hasil:
+17
+
+6. Hasil function dapat dipakai lagi sebagai input
+Kode:
+hasil2 = jumlahkan([hasil, 3])
+print(hasil2)
+
+Hasil:
+20
+
+7. max() tanpa return
+Percobaan:
+def terbesar(angka):
+    max(angka)
+
+Catatan:
+max(angka) menghitung nilai terbesar, tetapi hasilnya tidak otomatis menjadi
+hasil function jika tidak dikembalikan.
+
+8. return list, bukan nilai terbesar
+Kode:
+def terbesar(angka):
+    max(angka)
+    return angka
+
+Hasil:
+[4, 2, 5, 6, 8]
+
+Perbaikan:
+def terbesar(angka):
+    return max(angka)
+
+Hasil:
+8
+
+9. print() tanpa return menghasilkan None
+Percobaan:
+def terbesar(angka):
+    max(angka)
+    print(angka)
+
+hasil = terbesar([4, 2, 5, 6, 8])
+print(hasil)
+
+Hasil:
+[4, 2, 5, 6, 8]
+None
+
+Catatan:
+Function tidak memiliki return, sehingga hasil yang disimpan ke variabel adalah None.
+
+10. Menggunakan variabel sebelum dibuat
+Kode:
+def terbesar(angka):
+    max(nilai)
+    for nilai in angka:
+        return nilai
+
+Error:
+UnboundLocalError: cannot access local variable 'nilai' where it is not associated with a value
+
+Catatan:
+Variabel nilai baru dibuat oleh for setelah baris max(nilai).
+
+11. Logika mencari nilai terbesar tanpa max()
+Kode:
+def terbesar(angka):
+    terbesar = angka[0]
+
+    for nilai in angka:
+        if nilai > terbesar:
+            terbesar = nilai
+
+    return terbesar
+
+Hasil untuk [4, 2, 5, 6, 8]:
+8
+
+12. Logika mencari nilai terkecil tanpa min()
+Kode:
+def terkecil(angka):
+    terkecil = angka[0]
+
+    for nilai in angka:
+        if nilai < terkecil:
+            terkecil = nilai
+
+    return terkecil
+
+Hasil untuk [4, 2, 5, 6, 8]:
+2
+
+Catatan:
+Konsepnya sama dengan mencari terbesar, hanya operatornya dibalik dari > menjadi <.
