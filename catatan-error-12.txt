@@ -1,0 +1,199 @@
+Catatan Error - Latihan 12
+
+1. Lupa tanda = pada assignment
+Kode:
+def jumlahkan(angka):
+    total 0
+
+Error:
+SyntaxError: invalid syntax
+
+Perbaikan:
+total = 0
+
+
+2. return berada di luar function
+Percobaan:
+def jumlahkan(angka):
+    total = 0
+    for nilai in angka:
+        total = total + nilai
+return total
+
+Error:
+SyntaxError: 'return' outside function
+
+Catatan:
+return harus masih berada di dalam blok function.
+
+
+3. Salah ketik nama function
+Kode:
+hasil = jumlakan(5, 3, 7, 2)
+
+Error:
+NameError: name 'jumlakan' is not defined
+
+Perbaikan:
+jumlahkan(...)
+
+
+4. Jumlah argument tidak sesuai parameter
+Kode:
+hasil = jumlahkan(5, 3, 7, 2)
+
+Error:
+TypeError: jumlahkan() takes 1 positional argument but 4 were given
+
+Catatan:
+Function jumlahkan() hanya mempunyai satu parameter, yaitu angka.
+Data yang diberikan harus berupa satu list:
+jumlahkan([5, 3, 7, 2])
+
+
+5. max() dipanggil tetapi hasilnya tidak digunakan
+Percobaan:
+def terbesar(angka):
+    max(angka)
+    return angka
+
+Hasil:
+[4, 2, 5, 6, 8]
+
+Catatan:
+max(angka) menghasilkan 8, tetapi yang dikembalikan justru seluruh list.
+Perbaikan:
+return max(angka)
+
+
+6. Menggunakan variabel sebelum dibuat
+Kode:
+def terbesar(angka):
+    max(nilai)
+    for nilai in angka:
+        return nilai
+
+Error:
+UnboundLocalError: cannot access local variable 'nilai' where it is not associated with a value
+
+Catatan:
+nilai belum memiliki nilai ketika max(nilai) dijalankan.
+
+
+7. Tidak menggunakan return
+Kode:
+def terbesar(angka):
+    max(angka)
+    print(angka)
+
+Hasil:
+[4, 2, 5, 6, 8]
+None
+
+Catatan:
+Function tidak mengembalikan nilai karena tidak ada return.
+
+
+8. return terlalu awal di dalam for
+Percobaan:
+def ratarata(angka):
+    total = 0
+    for nilai in angka:
+        total = total + nilai
+        return total / len(angka)
+
+Hasil:
+0.8
+
+Catatan:
+return dijalankan pada putaran pertama.
+Perbaikan:
+return total / len(angka)
+diletakkan setelah loop.
+
+
+9. Counter tidak diperbarui
+Percobaan:
+def jumlah(angka):
+    jumlah = 0
+    for nilai in angka:
+        total = jumlah + 1
+    return jumlah
+
+Hasil:
+0
+
+Catatan:
+Yang diperbarui adalah total, sedangkan jumlah tetap 0.
+Perbaikan:
+jumlah = jumlah + 1
+
+
+10. Nama variabel list dan elemen dibuat sama
+Percobaan:
+def jumlah(angka):
+    jumlah = 0
+    for angka in angka:
+        jumlah = jumlah + 1
+    return jumlah
+
+Hasil:
+5
+
+Catatan:
+Kode tetap berjalan, tetapi penamaan membingungkan.
+Lebih jelas:
+for nilai in angka:
+
+
+11. Kesalahan pada total statistik
+Percobaan:
+total = jumlah + nilai
+
+Hasil statistik salah:
+(5, 13, 8, 2, 2.6)
+
+Catatan:
+jumlah adalah counter, bukan accumulator.
+Perbaikan:
+total = 0
+...
+total = total + nilai
+
+
+12. Beberapa return berurutan
+Percobaan:
+return jumlah
+return total / len(angka)
+return terbesar
+return terkecil
+
+Catatan:
+Function berhenti pada return pertama.
+Untuk mengembalikan banyak informasi, gunakan satu return:
+return jumlah, total, terbesar, terkecil, rata_rata
+
+
+13. Konsep counter dan accumulator
+
+Counter:
+jumlah = jumlah + 1
+→ menghitung berapa banyak data.
+
+Accumulator:
+total = total + nilai
+→ menjumlahkan nilai.
+
+
+14. Konsep penting hari ini
+
+- Function dapat menerima list sebagai parameter.
+- for dapat digunakan untuk memproses isi list.
+- return harus berada di dalam function.
+- return setelah loop digunakan ketika seluruh data harus diproses.
+- max() dapat digunakan untuk mencari nilai terbesar.
+- Nilai terbesar dan terkecil juga bisa dicari manual dengan perbandingan.
+- Counter berbeda dengan accumulator.
+- Function dapat mengembalikan beberapa nilai.
+- Beberapa nilai dapat di-unpack ke beberapa variabel.
+- Function yang sama dapat dipakai dengan data yang berbeda.
