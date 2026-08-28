@@ -1,0 +1,118 @@
+Catatan Error - Latihan 13
+
+1. Salah nama variabel penampung
+Percobaan:
+def nilai_lulus(nilai):
+    nilai = []
+    for angka in nilai:
+        if angka >= 75:
+            hasil.append(angka)
+    return hasil
+
+Error:
+NameError: name 'hasil' is not defined
+
+Catatan:
+Parameter nilai ditimpa menjadi list kosong dan hasil belum dibuat.
+
+Perbaikan:
+def nilai_lulus(nilai):
+    hasil = []
+    for angka in nilai:
+        if angka >= 75:
+            hasil.append(angka)
+    return hasil
+
+
+2. Salah operator untuk nilai gagal
+Percobaan:
+if angka <= 75:
+
+Hasil:
+[50, 65, 75, 60]
+
+Catatan:
+<= berarti kurang dari atau sama dengan 75.
+Untuk definisi gagal di bawah 75, gunakan < 75.
+
+Perbaikan:
+if angka < 75:
+
+Hasil:
+[50, 65, 60]
+
+
+3. Salah kondisi pada nilai_lulus
+Percobaan:
+if angka <= 75:
+
+Hasil:
+[50, 65, 75, 60]
+
+Perbaikan:
+if angka >= 75:
+
+Hasil:
+[80, 90, 75]
+
+
+4. UnboundLocalError pada counter
+Percobaan:
+total = 0
+
+def jumlah_lulus(nilai):
+    hasil = []
+    total = total + 1
+
+Error:
+UnboundLocalError: cannot access local variable 'total' where it is not associated with a value
+
+Catatan:
+total di dalam function dianggap variabel lokal dan dipakai sebelum diberi nilai.
+
+Perbaikan:
+def jumlah_lulus(nilai):
+    total = 0
+    for angka in nilai:
+        if angka >= 75:
+            total = total + 1
+    return total
+
+
+5. Counter harus diletakkan setelah kondisi
+Untuk menghitung jumlah lulus, total hanya bertambah ketika angka >= 75.
+
+
+6. Operator > dan >=
+Percobaan:
+if angka > 75:
+
+Hasil:
+2
+
+Nilai 75 tidak ikut dihitung.
+
+Perbaikan:
+if angka >= 75:
+
+Hasil:
+3
+
+
+7. Konsep append()
+hasil = []
+hasil.append(angka)
+
+Artinya membuat list kosong lalu menambahkan data yang memenuhi kondisi.
+
+
+8. Konsep penting hari ini
+- Function dapat menerima list sebagai parameter.
+- Function dapat membuat list baru.
+- append() menambahkan elemen ke list.
+- Filtering dilakukan dengan for + if.
+- Counter digunakan untuk menghitung data yang memenuhi kondisi.
+- Counter harus diinisialisasi sebelum loop.
+- Counter hanya dinaikkan ketika kondisi terpenuhi.
+- return mengembalikan hasil function.
+- <, <=, >, dan >= mempunyai arti yang berbeda.
