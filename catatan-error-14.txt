@@ -1,0 +1,60 @@
+Catatan Error - Remedial Day 14
+
+1. Membandingkan list dengan integer
+if nilai >= 75
+ketika nilai berisi seluruh list.
+Error:
+TypeError: '>=' not supported between instances of 'list' and 'int'
+Perbaikan: gunakan for agar yang dibandingkan adalah satu angka.
+
+2. return di luar function
+Error:
+SyntaxError: 'return' outside function
+Perbaikan: return harus berada di dalam def.
+
+3. Indentasi setelah if
+Error:
+IndentationError: expected an indented block after 'if' statement
+Perbaikan: isi if harus menjorok ke dalam.
+
+4. Salah memakai zip()
+zip(orang, angka) setelah loop dapat menyebabkan:
+TypeError: 'int' object is not iterable
+Perbaikan: zip() menerima list nama dan list nilai:
+zip(nama, nilai)
+
+5. hasil dibuat ulang di dalam loop
+Jika:
+hasil = []
+berada di dalam loop, hasil akan ter-reset.
+Akibatnya hanya data terakhir yang tersimpan.
+Perbaikan: buat hasil = [] sebelum for.
+
+6. print() dan append()
+print(orang) menampilkan langsung.
+hasil.append(orang) menyimpan ke list hasil.
+
+7. Counter
+Counter harus dimulai sebelum loop:
+total = 0
+
+Lalu hanya bertambah ketika kondisi terpenuhi:
+total = total + 1
+
+8. Operator perbandingan
+>= 75 berarti 75 ikut.
+> 75 berarti 75 tidak ikut.
+Untuk latihan:
+lulus >= 75
+gagal < 75
+
+9. Scope
+Variabel counter seperti total sebaiknya dibuat di dalam function
+agar dimulai dari nol setiap function dipanggil.
+
+10. Hal yang masih perlu diperkuat
+- membedakan list dengan satu elemen
+- menentukan posisi variabel penampung
+- menentukan kapan memakai return
+- menyusun urutan logika sebelum menulis kode
+- menjaga nama variabel tetap konsisten
