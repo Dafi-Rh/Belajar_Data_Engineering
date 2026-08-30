@@ -1,0 +1,89 @@
+Catatan Error - Remedial Day 15
+
+1. UnboundLocalError pada counter
+Masalah: total = total + 1 sebelum total diberi nilai di dalam function.
+Pelajaran: buat total = 0 di dalam function sebelum digunakan.
+
+2. Membandingkan list dengan integer
+Masalah: if nilai >= 75 saat nilai adalah seluruh list.
+Error: TypeError: '>=' not supported between instances of 'list' and 'int'
+Pelajaran: gunakan for lalu bandingkan satu elemen, misalnya angka.
+
+3. Counter di-reset di dalam for
+Masalah: total = 0 di dalam loop membuat hitungan kembali ke nol.
+Pelajaran: counter dibuat sebelum for.
+
+4. return terlalu awal
+Masalah: return di dalam loop menghentikan function pada data pertama yang memenuhi syarat.
+Pelajaran: untuk memproses semua data, return setelah loop selesai.
+
+5. return di luar function
+Error: SyntaxError: 'return' outside function
+Pelajaran: return hanya boleh digunakan di dalam def.
+
+6. Salah menggunakan zip()
+Masalah: zip(orang, angka) ketika orang/angka hanya satu data.
+Pelajaran: pasangkan list nama dan list nilai dengan zip(nama, nilai).
+
+7. hasil = [] dibuat di dalam loop
+Akibat: list selalu dibuat ulang.
+Pelajaran: buat list hasil sebelum for.
+
+8. append() hanya menerima satu objek
+Masalah: hasil.append(nama_tertinggi, angka)
+Error: TypeError: list.append() takes exactly one argument (2 given)
+Pelajaran: append() menerima satu objek; dua informasi yang terkait bisa dikembalikan sebagai tuple.
+
+9. Bedakan list dan elemen loop
+nama = seluruh list nama
+orang = satu nama
+nilai = seluruh list nilai
+angka = satu nilai
+
+10. Mencari nilai tertinggi
+Saat angka lebih tinggi:
+tertinggi = angka
+nama_tertinggi = orang
+
+11. Mencari nilai terendah
+Saat angka lebih rendah:
+terendah = angka
+nama_terendah = orang
+
+12. Operator saat nilai sama
+>  -> nilai pertama dipertahankan
+>= -> nilai terakhir dapat menggantikan
+<  -> nilai terendah pertama dipertahankan
+<= -> nilai terendah terakhir dapat menggantikan
+
+13. Salah memanggil nama function
+Nama function saat dipanggil harus sama dengan nama function saat dibuat.
+
+14. Pelajaran utama Day 15
+Urutan berpikir:
+tujuan
+-> tentukan data
+-> tentukan wadah
+-> for jika data banyak
+-> if jika ada syarat
+-> simpan/ubah hasil
+-> return setelah proses selesai
+
+Yang sudah semakin dikuasai:
+- for
+- if
+- zip()
+- append()
+- counter
+- accumulator
+- return
+- filtering
+- nilai tertinggi/terendah
+- nama pemilik nilai ekstrem
+- mengembalikan dua informasi
+
+Yang masih perlu dilatih:
+- menyusun urutan kode tanpa clue
+- menentukan posisi variabel penampung
+- membedakan list dan satu elemen
+- memulai dari penjelasan masalah sebelum coding
