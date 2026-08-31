@@ -1,0 +1,166 @@
+Catatan Error - Python Day 16
+
+1. Salah memakai list `nilai` di dalam loop
+Salah:
+if nilai >= 90
+
+Jika `nilai` adalah list, Python membandingkan list dengan integer.
+
+Benar:
+if angka >= 90
+
+Karena `angka` adalah satu nilai dari setiap pasangan zip().
+
+
+2. Kondisi rentang
+Untuk nilai 80 sampai 90, termasuk batas:
+angka >= 80 and angka <= 90
+
+Untuk nilai 80 sampai kurang dari 100:
+angka >= 80 and angka < 100
+
+
+3. append() hanya menerima satu objek
+Salah:
+hasil.append(orang, angka)
+
+Error:
+TypeError: list.append() takes exactly one argument (2 given)
+
+Benar:
+hasil.append((orang, angka))
+
+Tuple `(orang, angka)` diperlakukan sebagai satu objek.
+
+
+4. Jangan memakai `orang + angka`
+`orang` adalah string, `angka` adalah integer.
+
+Salah:
+orang + angka
+
+Error:
+TypeError: can only concatenate str (not "int") to str
+
+
+5. `and` adalah operator logika
+Percobaan:
+hasil.append(orang and angka)
+
+Hasilnya bukan pasangan nama + nilai.
+Untuk pasangan, gunakan tuple:
+(orang, angka)
+
+
+6. Satu list untuk banyak pasangan
+Dua list terpisah:
+siswa = []
+grade = []
+
+menghasilkan nama dan nilai terpisah.
+
+Untuk:
+[('A', 80), ('C', 90)]
+
+gunakan:
+hasil = []
+hasil.append((orang, angka))
+
+
+7. Mencari tertinggi
+Simpan dua informasi:
+tertinggi
+nama_tertinggi
+
+Saat nilai baru lebih tinggi:
+tertinggi = angka
+nama_tertinggi = orang
+
+Setelah loop:
+return nama_tertinggi, tertinggi
+
+
+8. Mencari terendah
+Gunakan:
+if angka < terendah:
+
+Saat menemukan nilai yang lebih rendah:
+terendah = angka
+nama_terendah = orang
+
+Setelah loop:
+return nama_terendah, terendah
+
+
+9. `>` vs `>=` saat ada nilai sama
+Untuk tertinggi:
+>  -> nilai tertinggi pertama dipertahankan
+>= -> nilai tertinggi terakhir dapat menggantikan
+
+Untuk terendah:
+<  -> nilai terendah pertama dipertahankan
+<= -> nilai terendah terakhir dapat menggantikan
+
+
+10. Beberapa `if` dalam satu `for`
+Boleh dan sering diperlukan.
+
+Contoh:
+if angka >= 75:
+    jumlah = jumlah + 1
+
+if angka > tertinggi:
+    tertinggi = angka
+    nama_tertinggi = orang
+
+Kedua kondisi diperiksa secara terpisah.
+
+
+11. `elif` berbeda dari dua `if`
+Pada:
+if kondisi_a:
+    ...
+elif kondisi_b:
+    ...
+
+Jika kondisi_a benar, kondisi_b tidak diperiksa.
+
+Sedangkan:
+if kondisi_a:
+    ...
+if kondisi_b:
+    ...
+
+kedua kondisi dapat dijalankan.
+
+
+12. Kesalahan nama function
+Nama saat memanggil harus sama dengan nama function yang dibuat.
+Contoh:
+def ringkasan(...):
+dipanggil dengan:
+ringkasan(...)
+
+bukan nama lain.
+
+
+13. Perkembangan Day 16
+Yang semakin dikuasai:
+- def/function
+- parameter
+- for
+- if
+- beberapa if dalam satu loop
+- zip()
+- list
+- append()
+- counter
+- accumulator
+- filtering
+- kondisi rentang
+- mencari nilai tertinggi/terendah
+- menyimpan nama + nilai
+- return beberapa informasi
+
+Status:
+Day 16 masih REMEDIAL. Materi baru belum dimulai.
