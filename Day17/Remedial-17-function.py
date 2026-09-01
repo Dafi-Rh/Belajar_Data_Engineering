@@ -34,17 +34,3 @@ def statistik(nama, nilai):
             terendah = angka
     return tertinggi, terendah, avg
 
-if __name__ == "__main__":
-    daftar_nama = ["Owi", "Joni", "Wowo", "Didi", "Eko"]
-    daftar_nilai = [80, 65, 90, 70, 100]
-
-    print("--- Siswa Lulus (Nilai >= 75) ---")
-    print(siswa_lulus(daftar_nama, daftar_nilai))
-
-    print("
---- Ringkasan (Jumlah Siswa, Total Nilai, Rata-rata) ---")
-    print(ringkasan(daftar_nama, daftar_nilai))
-
-    print("
---- Statistik (Nilai Tertinggi, Nilai Terendah, Rata-rata) ---")
-    print(statistik(daftar_nama, daftar_nilai))
