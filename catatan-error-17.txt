@@ -1,0 +1,38 @@
+==================================================
+              CATATAN BELAJAR - DAY 17
+==================================================
+
+1. FUNGSI siswa_lulus(nama, nilai)
+--------------------------------------------------
+* Penjelasan: 
+  Mengfilter daftar siswa yang memperoleh nilai di atas atau sama dengan batas kelulusan (>= 75).
+* Konsep Utama:
+  - Menggunakan fungsi built-in `zip(nama, nilai)` untuk menggabungkan dua list secara sejajar.
+  - Memanfaatkan percabangan `if angka >= 75` untuk menyaring data.
+  - Menyimpan hasil filter ke dalam list berbentuk tuple `(orang, angka)`.
+* Contoh Output:
+  [('Owi', 80), ('Wowo', 90), ('Eko', 100)]
+
+
+2. FUNGSI ringkasan(nama, nilai)
+--------------------------------------------------
+* Penjelasan:
+  Menghitung akumulasi jumlah siswa, total keseluruhan nilai, dan rata-rata nilai siswa.
+* Konsep Utama:
+  - Menggunakan accumulator `siswa` (penghitung jumlah elemen) dan `total` (penjumlahan nilai).
+  - Menghitung rata-rata dengan rumus `avg = total / siswa`.
+  - Mengembalikan multiple return values berupa tuple `(siswa, total, avg)`.
+* Contoh Output:
+  (5, 405, 81.0)
+
+
+3. FUNGSI statistik(nama, nilai)
+--------------------------------------------------
+* Penjelasan:
+  Mencari nilai tertinggi, nilai terendah, dan nilai rata-rata dari seluruh siswa.
+* Konsep Utama:
+  - Inisialisasi nilai ekstrem: `tertinggi = 0` dan `terendah = 999999` (nilai batas awal).
+  - Melakukan iterasi untuk membandingkan setiap nilai dengan nilai `tertinggi` dan `terendah`.
+  - Menghitung akumulasi total dan rata-rata di dalam perulangan.
+* Contoh Output:
+  (100, 65, 81.0)
