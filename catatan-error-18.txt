@@ -1,0 +1,72 @@
+Python Day 18 - Catatan
+
+File ini hanya berisi latihan Day 18 yang benar-benar dikerjakan.
+
+1. siswa_lulus(nama)
+Hasil:
+['Owi', 'Wowo', 'Eko']
+
+Konsep:
+- list of dictionary
+- for
+- akses dictionary dengan ["nama"] dan ["nilai"]
+- if
+- append()
+
+
+2. avg(nama)
+Hasil:
+81.0
+
+Konsep:
+- counter: jumlah = jumlah + 1
+- accumulator: total = total + orang["nilai"]
+- rata-rata = total / jumlah
+
+
+3. tertinggi(nama)
+Hasil:
+100
+
+Konsep:
+- membandingkan orang["nilai"] dengan tertinggi
+
+
+4. siswa_tertinggi(nama)
+Hasil:
+('Eko', 100)
+
+Konsep:
+- menyimpan nilai tertinggi
+- menyimpan nama pemilik nilai tertinggi
+- return dua hasil
+
+
+5. avg_lulus(nama)
+Hasil:
+90.0
+
+Konsep:
+- filtering nilai >= 75
+- counter siswa lulus
+- total nilai lulus
+- rata-rata nilai lulus
+
+
+6. upavg(nama)
+Hasil:
+['Wowo', 'Eko']
+
+Catatan:
+Versi yang dikerjakan hari ini menghasilkan target tersebut.
+Untuk definisi "di atas rata-rata seluruh siswa" yang benar-benar
+berdasarkan rata-rata akhir, secara konsep biasanya dilakukan dalam
+dua tahap: hitung rata-rata seluruh siswa terlebih dahulu, lalu
+filter siswa yang nilainya di atas rata-rata akhir.
+
+
+Status Day 18:
+Masih tahap penguatan Python untuk pengolahan data.
+Materi utama hari ini: list of dictionary.
+
+Tidak ada latihan Day 15, Day 16, atau Day 17 di file ini.
