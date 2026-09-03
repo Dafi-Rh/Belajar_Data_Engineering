@@ -1,0 +1,69 @@
+Catatan Error - Python Day 19
+
+1. Sempat hanya mencari nilai tertinggi tanpa memeriksa syarat lulus.
+Perbaikan:
+if orang["nilai"] >= 75 and orang["nilai"] > tertinggi:
+
+2. Sempat menggabungkan hitung jumlah lulus dan pencarian tertinggi
+ dalam satu kondisi. Ini salah karena jumlah dan total harus dihitung
+ untuk setiap siswa lulus, bukan hanya saat nilai menjadi rekor tertinggi.
+
+Perbaikan:
+if siswa["nilai"] >= 75:
+    jumlah = jumlah + 1
+    total = total + siswa["nilai"]
+
+if siswa["nilai"] >= tertinggi:
+    tertinggi = siswa["nilai"]
+
+3. Saat mengelompokkan siswa per kelas, sempat menyimpan satu nama
+langsung ke variabel. Nama sebelumnya tertimpa.
+
+Perbaikan:
+hasil_a = []
+hasil_b = []
+
+lalu gunakan append() untuk mengumpulkan semua nama.
+
+4. Sempat mendapat UnboundLocalError karena variabel hasil_b belum
+pernah dibuat tetapi langsung digunakan. Solusi: inisialisasi list
+sebelum loop.
+
+5. Sempat menggunakan else untuk membentuk hasil kelas B. Else terikat
+pada if terdekat, sehingga tidak cocok untuk logika pengelompokan ini.
+
+6. Struktur dictionary bertingkat perlu ditulis sebagai dictionary di
+dalam value key:
+hasil = {
+    "A": {
+        "jumlah": jumlah_a,
+        "tertinggi": tertinggi_a,
+        "rata-rata": ...
+    },
+    "B": {
+        "jumlah": jumlah_b,
+        "tertinggi": tertinggi_b,
+        "rata-rata": ...
+    }
+}
+
+7. Day 19 menunjukkan kemampuan yang semakin stabil pada:
+- list of dictionary
+- for
+- if
+- and
+- counter
+- accumulator
+- filtering
+- pencarian nilai tertinggi
+- grouping sederhana
+- dictionary bertingkat
+- debugging dasar
+
+Evaluasi objektif:
+Fondasi Python dasar sudah cukup untuk mulai SQL.
+Python belum selesai dan belum intermediate.
+Python tetap akan dilanjutkan sebagai Python untuk Data Engineering.
+
+Keputusan belajar:
+Day 20 = mulai SQL dasar.
