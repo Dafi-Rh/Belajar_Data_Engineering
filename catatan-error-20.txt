@@ -1,0 +1,31 @@
+==========================================
+CATATAN ERROR & PEMBELAJARAN - DAY 20
+==========================================
+
+Hari ini kita resmi mulai belajar SQL menggunakan PostgreSQL 18.6 dan pgAdmin 4! 
+Berikut adalah ringkasan error dan konsep penting yang kita bedah hari ini:
+
+1. ERROR: relation "siswa" already exists (SQL state: 42P07)
+------------------------------------------------------------
+- Penyebab: 
+  Menjalankan perintah "CREATE TABLE siswa" saat tabel "siswa" sudah pernah dibuat sebelumnya di database. Di pgAdmin Query Tool, jika kita menulis banyak perintah sekaligus dan menekan F5, pgAdmin akan mencoba menjalankan semuanya dari atas ke bawah.
+- Solusi:
+  Hapus perintah CREATE TABLE dari Query Tool jika tabel sudah berhasil dibuat, atau jalankan perintah "SELECT * FROM siswa;" saja untuk melihat datanya.
+
+2. Mengapa Siswa dengan Nilai < 75 Muncul Kembali saat Diurutkan?
+------------------------------------------------------------
+- Masalah:
+  Saat menjalankan query:
+  "SELECT nama, nilai FROM siswa ORDER BY nilai DESC;"
+  Siswa yang nilainya di bawah 75 (seperti Joni dan Didi) muncul kembali padahal sebelumnya sudah disaring.
+- Penyebab:
+  Karena kita hanya menggunakan perintah pengurutan (ORDER BY) tanpa perintah penyaring (WHERE).
+- Solusi:
+  Gabungkan kedua perintah tersebut. Urutan penulisan di SQL sangat ketat dan tidak boleh terbalik:
+  SELECT -> FROM -> WHERE -> ORDER BY.
+  
+  Query gabungan yang benar:
+  "SELECT nama, nilai FROM siswa WHERE nilai >= 75 ORDER BY nilai DESC;"
+
+Catatan Tambahan:
+- Berbeda dengan Python interactive shell (REPL) yang butuh screenshot terus-menerus, di pgAdmin kita cukup menyalin (copy-paste) query SQL dan teks error di tab "Messages" untuk berdiskusi jika ada kendala.
