@@ -1,0 +1,78 @@
+Catatan Error - SQL Day 21
+
+1. ORDER BY DESC
+Salah:
+    ORDER BY DESC
+
+Benar:
+    ORDER BY nilai DESC
+
+ORDER BY membutuhkan nama kolom.
+
+2. LIMIT BY 3
+Salah:
+    LIMIT BY 3
+
+Benar:
+    LIMIT 3
+
+3. BETWEEN dengan tanda kurung
+Salah:
+    BETWEEN (80, 90)
+
+Benar:
+    BETWEEN 80 AND 90
+
+4. Memanggil kolom seperti fungsi
+Salah:
+    nama('eko')
+
+Benar:
+    nama = 'eko'
+
+SQL menganggap nama('eko') sebagai pemanggilan fungsi.
+
+5. NOT
+Sempat mencoba:
+    AND NOT = 'owi'
+
+Benar:
+    AND NOT nama = 'owi'
+
+Alternatif yang lebih ringkas:
+    nama <> 'owi'
+
+6. Penggunaan ASC/DESC
+ASC  = ascending = kecil ke besar
+DESC = descending = besar ke kecil
+
+7. Kesalahan konsep kecil
+Saat mencari nilai tertentu dengan IN:
+    WHERE nilai IN (65, 100)
+
+Saat mencari semua kecuali nilai tertentu:
+    WHERE nilai NOT IN (65, 100)
+
+Saat mencari rentang:
+    WHERE nilai BETWEEN 70 AND 90
+
+8. Evaluasi Day 21
+Materi yang sudah dipraktikkan:
+- SELECT
+- FROM
+- WHERE
+- AND
+- OR
+- BETWEEN
+- IN
+- NOT IN
+- =
+- <>
+- ORDER BY
+- ASC
+- DESC
+- LIMIT
+
+Strategi belajar:
+Tetap memperkuat query dasar sebelum masuk GROUP BY dan materi SQL
+yang lebih lanjut.
