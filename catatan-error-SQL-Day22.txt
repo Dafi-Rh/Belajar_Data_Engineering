@@ -1,0 +1,34 @@
+Catatan Error & Pembelajaran - SQL Day 22
+
+1. ORDER BY DESC
+Salah:
+    ORDER BY DESC
+
+Benar:
+    ORDER BY nilai DESC
+
+2. WHERE vs HAVING
+WHERE menyaring baris sebelum GROUP BY.
+HAVING menyaring hasil kelompok setelah GROUP BY.
+
+3. Koma vs AND
+Koma digunakan untuk memisahkan beberapa kolom/ekspresi di SELECT.
+AND digunakan untuk menggabungkan kondisi di WHERE/HAVING.
+
+4. Operator
+>  = lebih dari
+>= = lebih dari atau sama dengan
+<  = kurang dari
+<= = kurang dari atau sama dengan
+
+5. ORDER BY harus sesuai pertanyaan.
+ORDER BY kalas ASC -> urut berdasarkan kelas.
+ORDER BY AVG(nilai) DESC -> urut berdasarkan rata-rata.
+ORDER BY SUM(nilai) DESC -> urut berdasarkan total.
+
+6. AVG dapat tampil dengan banyak angka desimal.
+90.0000000000000000 tetap bernilai 90.
+
+7. Day 22 fokus pada:
+COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING,
+serta kombinasi WHERE + GROUP BY + HAVING + ORDER BY.
