@@ -1,0 +1,75 @@
+CATATAN ERROR - PYTHON DAY 23
+
+1. Tuple tidak bisa dipanggil seperti function
+Salah:
+    siswa("angka")
+Error:
+    TypeError: 'tuple' object is not callable
+Benar:
+    siswa[1]
+
+2. Variabel yang belum dibuat
+Salah:
+    if angka > tertinggi:
+Error:
+    NameError: name 'angka' is not defined
+Pada loop, gunakan data dari tuple seperti siswa[1].
+
+3. Tuple memakai indeks angka
+Salah:
+    siswa["nama"]
+Error:
+    TypeError: tuple indices must be integers or slices, not str
+Benar:
+    siswa[0]
+
+4. Indeks di luar batas
+Salah:
+    siswa[3]
+Error:
+    IndexError: tuple index out of range
+Tuple ('Eko', 100, 'A') hanya punya indeks 0, 1, 2.
+
+5. sorted() pada integer
+Salah:
+    for nomor in angka:
+        sorted(nomor)
+Jika nomor = 6, Python mencoba sorted(6).
+Error:
+    TypeError: 'int' object is not iterable
+
+6. sorted() tidak mengubah list asli
+    sorted(angka, reverse=True)
+membuat hasil baru. List asli tetap tidak berubah.
+
+7. Parameter function tidak boleh berupa nilai langsung
+Salah:
+    def cari_nilai(data, 80):
+Benar:
+    def cari_nilai(data, batas)
+Kemudian panggil:
+    cari_nilai(data, 80)
+
+8. Parameter fleksibel
+Kurang fleksibel:
+    def cari_nilai(data):
+        batas = 80
+Lebih fleksibel:
+    def cari_nilai(data, batas):
+
+9. Operator
+    >  lebih besar
+    >= lebih besar atau sama dengan
+    <  lebih kecil
+    <= lebih kecil atau sama dengan
+
+10. Konsep utama Day 23
+- list dan append()
+- tuple dan indexing
+- for + if untuk filtering
+- function dan parameter
+- mencari nilai tertinggi/terendah
+- sorted()
+- reverse=True
+- key
+- lambda
