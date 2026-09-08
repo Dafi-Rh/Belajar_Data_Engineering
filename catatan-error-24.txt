@@ -1,0 +1,68 @@
+CATATAN ERROR - PYTHON DAY 24
+
+1. Key dictionary yang sama berulang dalam satu dictionary akan ditimpa
+   oleh nilai terakhir. Untuk banyak siswa gunakan list berisi dictionary.
+
+2. Salah objek saat loop
+Salah:
+    for data in siswa:
+        if siswa["nilai"] > 75:
+
+`siswa` adalah list, sedangkan `data` adalah satu dictionary.
+
+Benar:
+    for data in siswa:
+        if data["nilai"] > 75:
+
+3. Dictionary menggunakan key
+    data["nilai"]
+    data["grade"]
+    data["nama"]
+
+4. Parameter function tidak boleh berupa nilai langsung
+Salah:
+    def cari_nilai(data, 80):
+
+Benar:
+    def cari_nilai(data, batas):
+
+Kemudian:
+    cari_nilai(data, 80)
+
+5. `>` vs `>=`
+    >  = lebih besar
+    >= = lebih besar atau sama dengan
+
+6. ZeroDivisionError
+Terjadi saat total / jumlah dilakukan ketika jumlah masih 0.
+
+7. UnboundLocalError / NameError
+Variabel hasil yang hanya dibuat di dalam kondisi bisa belum pernah dibuat
+jika kondisi tersebut tidak pernah terpenuhi. Memberi nilai awal membantu.
+
+8. Kesalahan variabel total
+Harus menggunakan variabel grade yang sesuai:
+    total4 = total4 + siswa["nilai"]
+
+9. Dictionary bertingkat
+Untuk:
+    {"A": {"jumlah": 0, "total": 0}}
+
+akses yang benar:
+    hasil["A"]["jumlah"]
+    hasil["A"]["total"]
+
+Dengan grade dinamis:
+    hasil[data["grade"]]["jumlah"]
+    hasil[data["grade"]]["total"]
+
+10. Pelajaran utama Day 24
+- dictionary dasar
+- list berisi dictionary
+- akses dictionary dengan key
+- filtering
+- counter
+- function dengan parameter
+- statistik berdasarkan kategori
+- dictionary dinamis
+- nested dictionary
