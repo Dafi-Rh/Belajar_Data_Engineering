@@ -1,0 +1,75 @@
+CATATAN ERROR - SQL DAY 25
+
+1. GROUP BY tidak tepat untuk soal membandingkan nilai siswa dengan rata-rata seluruh siswa.
+   Gunakan subquery AVG() untuk menghasilkan satu nilai pembanding.
+
+2. Alias seperti rata_rata tidak bisa langsung dipakai sebagai pembanding di WHERE
+   pada SELECT yang sama.
+
+3. WHERE harus menghasilkan TRUE/FALSE.
+   Subquery yang hanya menghasilkan AVG(nilai) adalah angka, jadi harus dibandingkan:
+       WHERE nilai > (subquery)
+
+4. AS siswa2 adalah alias, bukan salinan tabel.
+   FROM siswa AS siswa2 hanya memberi nama lain untuk tabel siswa di dalam query tersebut.
+
+5. Correlated subquery:
+       siswa.kalas
+   = kelas dari baris query luar (patokan)
+
+       siswa2.kalas
+   = kelas dari baris query dalam (pencari)
+
+   Kondisi:
+       siswa2.kalas = siswa.kalas
+   berarti mencari siswa2 yang kelasnya sama dengan siswa yang sedang diperiksa.
+
+6. Jangan memakai:
+       siswa.kalas = siswa.kalas
+   karena kedua sisi menunjuk referensi yang sama dan tidak membuat pencocokan dengan
+   baris lain.
+
+7. Logika correlated subquery:
+   Owi  -> A -> cari semua A -> AVG A
+   Joni -> B -> cari semua B -> AVG B
+   Wowo -> A -> cari semua A -> AVG A
+   Didi -> B -> cari semua B -> AVG B
+   Eko  -> A -> cari semua A -> AVG A
+
+8. Kesalahan posisi WITH / CTE.
+   CTE harus ditulis di awal query:
+       WITH rata_kelas AS (...)
+       SELECT ...
+   bukan setelah SELECT/FROM/GROUP BY.
+
+9. CTE rata-rata kelas yang benar:
+       WITH rata_kelas AS (
+           SELECT kalas, AVG(nilai) AS rata_rata
+           FROM siswa
+           GROUP BY kalas
+       )
+
+10. Jangan GROUP BY nama, nilai, kalas jika tujuanmu mencari rata-rata kelas.
+    Itu membuat setiap siswa menjadi kelompok sendiri sehingga AVG(nilai) sama dengan
+    nilai siswa tersebut.
+
+11. Percobaan selisih:
+       WHERE nilai - (subquery)
+    error karena WHERE membutuhkan boolean, sedangkan hasil pengurangan adalah numeric.
+    Perhitungan selisih harus ditempatkan di SELECT, misalnya:
+       nilai - (subquery) AS selisih
+
+12. Konsep utama Day 25:
+    - subquery
+    - AVG() dan MAX() dalam subquery
+    - correlated subquery
+    - alias tabel
+    - patokan vs pencari
+    - subquery sebagai filter
+    - subquery sebagai kolom
+    - perhitungan selisih
+    - CTE / WITH
+    - GROUP BY dalam CTE
+
+Lanjutan Day 25:
+JOIN antara tabel siswa dan CTE rata_kelas.
