@@ -1,0 +1,48 @@
+CATATAN ERROR - SQL DAY 26
+
+1. Kolom ambigu setelah JOIN
+Jika kedua sumber punya kolom kalas, menulis SELECT kalas bisa ambigu.
+Gunakan s.kalas atau r.kalas.
+
+2. Setelah JOIN ada dua sumber data.
+Karena itu alias seperti s dan r membantu memperjelas asal kolom.
+
+3. CTE hanya membawa kolom yang dipilih di dalam SELECT CTE.
+
+4. GROUP BY kalas menghasilkan satu baris per kelas.
+Jika GROUP BY nama, nilai, kalas, setiap siswa menjadi grup sendiri.
+
+5. ROW_NUMBER di CTE harus berada di dalam SELECT lengkap.
+Contoh:
+WITH top AS (
+    SELECT ..., ROW_NUMBER() OVER (...) AS ranking
+    FROM siswa
+)
+
+6. Jika CTE ranking hanya berisi kalas dan ranking lalu di-JOIN
+   kembali berdasarkan kalas, semua siswa dalam kelas dapat muncul.
+Lebih tepat membawa nama/nilai ke CTE dan langsung memfilter ranking.
+
+7. Window function:
+AVG(nilai) OVER (PARTITION BY kalas)
+menghitung rata-rata per kelas tanpa menghilangkan baris siswa.
+
+8. RANK vs DENSE_RANK vs ROW_NUMBER
+Nilai 70, 70, 70, 65:
+RANK        = 1, 1, 1, 4
+DENSE_RANK  = 1, 1, 1, 2
+ROW_NUMBER  = 1, 2, 3, 4
+
+9. LAG tanpa PARTITION berjalan di seluruh hasil.
+LAG dengan PARTITION BY kalas berjalan terpisah per kelas.
+
+10. LEAD adalah kebalikan LAG:
+LAG = baris sebelumnya
+LEAD = baris berikutnya
+
+11. Perhitungan yang memakai hasil LAG lebih mudah dibuat lewat CTE,
+lalu dihitung di SELECT luar.
+
+12. Konsep utama Day 26:
+JOIN, CTE, GROUP BY, PARTITION BY, ROW_NUMBER, RANK,
+DENSE_RANK, LAG, LEAD, dan perhitungan analitik per kelompok.
