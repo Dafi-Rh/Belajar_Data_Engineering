@@ -1,0 +1,101 @@
+CATATAN ERROR - PYTHON DAY 27
+
+1. SyntaxError saat membuat dictionary
+
+Percobaan:
+    hasil = ({nama:
+             tertinggi:
+             grade:})
+
+Masalah:
+Dictionary harus ditulis menggunakan pasangan key: value.
+
+Contoh benar:
+    hasil = {
+        "nama": data["nama"],
+        "nilai": data["nilai"],
+        "grade": data["grade"]
+    }
+
+
+2. `hasil.append(...)` pada function top
+
+Ketika:
+    hasil = []
+    hasil.append(...)
+
+setiap siswa yang memecahkan rekor akan dimasukkan.
+Untuk nilai:
+    80, 90, 100
+
+hasil:
+    80, 90, 100
+
+Padahal function top hanya dimaksudkan untuk mendapatkan siswa
+dengan nilai tertinggi.
+
+
+3. Menggunakan:
+    if data["nilai"] == 100
+
+Ini hanya bekerja jika kita sudah tahu sebelumnya bahwa nilai tertinggi
+adalah 100. Jika data berubah, function dapat gagal mencari nilai tertinggi.
+
+
+4. Percobaan dengan hasil1 dan hasil2
+
+Kedua kondisi menggunakan pembanding `tertinggi2` yang sama.
+Akibatnya hasil1 dan hasil2 dapat menyimpan siswa yang sama.
+
+
+5. Solusi algoritma dua tahap
+
+Tahap pertama:
+    tertinggi = 0
+    for data in siswa:
+        if data["nilai"] > tertinggi:
+            tertinggi = data["nilai"]
+
+Tahap kedua:
+    for data in siswa:
+        if data["nilai"] == tertinggi:
+            hasil.append(data)
+
+
+6. List vs Dictionary
+
+List:
+    hasil = []
+Digunakan jika hasil bisa terdiri dari banyak data.
+
+Dictionary:
+    hasil = {}
+Digunakan jika menyimpan satu kumpulan data key-value.
+
+
+7. Kesalahan nama function
+
+Jika function dibuat:
+    def top_semua(siswa):
+
+maka harus dipanggil:
+    top_semua(siswa)
+
+bukan:
+    top(siswa)
+
+
+8. Konsep utama Day 27
+
+- function
+- parameter
+- list
+- dictionary
+- list of dictionaries
+- for
+- if
+- append()
+- filtering
+- pencarian nilai maksimum manual
+- algoritma dua tahap
+- menangani tie / nilai maksimum yang sama
