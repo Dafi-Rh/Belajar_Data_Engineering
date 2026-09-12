@@ -1,0 +1,67 @@
+CATATAN ERROR - PYTHON DAY 28
+
+1. Menggunakan else untuk C
+    elif data["grade"] == "B":
+        ...
+    else:
+        jumlahc = jumlahc + 1
+
+Artinya semua grade selain A dan B dianggap C.
+Dengan data yang hanya A/B/C memang aman, tetapi D juga akan dihitung C.
+
+2. Accumulator yang salah
+Menggunakan satu variabel `total` untuk semua grade membuat total antar-grade tercampur.
+
+Contoh:
+B 80 -> total 80
+C 65 -> total 145
+A 90 -> total 235
+
+Padahal total terpisah:
+A = 190
+B = 80
+C = 275
+
+3. NameError
+`return hasil` akan error jika yang dibuat adalah `hasil1` dan `hasil2`.
+
+Nama variabel harus konsisten.
+
+4. SyntaxError pada dictionary
+Pasangan key-value harus dipisahkan dengan koma.
+
+Benar:
+    hasil_akhir = {
+        "A": hasila,
+        "B": hasilb
+    }
+
+5. UnboundLocalError
+Variabel seperti `hasild` atau `hasillain` hanya dibuat ketika kondisi tertentu terjadi.
+Jika grade tersebut tidak pernah muncul, variabel belum ada saat return.
+
+6. Solusi dictionary dinamis
+    hasil = {}
+
+    for data in siswa:
+        grade = data["grade"]
+
+        if grade not in hasil:
+            hasil[grade] = 0
+
+        hasil[grade] = hasil[grade] + data["nilai"]
+
+7. Arti `if grade not in hasil`
+Mengecek apakah key grade tersebut BELUM ada di dictionary.
+Jika belum ada, dibuat dengan nilai awal 0.
+
+8. Konsep utama
+- counter
+- accumulator
+- dictionary
+- dictionary dinamis
+- key
+- `in` dan `not in`
+- for
+- if/elif/else
+- agregasi berdasarkan kategori
