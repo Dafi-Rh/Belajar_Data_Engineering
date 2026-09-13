@@ -1,0 +1,50 @@
+CATATAN ERROR - PYTHON DAY 29
+
+1. Hasil function bernama rata_grade masih berupa total, bukan rata-rata.
+Kode menghitung:
+    hasil[grade] = hasil[grade] + data["nilai"]
+Jadi hasilnya:
+    {'B': 80, 'C': 275, 'A': 190}
+
+2. Mencampur total nilai dan jumlah siswa.
+Percobaan:
+    hasil[grade] = hasil[grade] + data["nilai"]
+    hasil[grade] = hasil[grade] + 1
+Hasil:
+    {'B': 81, 'C': 279, 'A': 192}
+Masalahnya total nilai dan jumlah siswa memakai tempat yang sama.
+
+3. SyntaxError pada assignment berantai yang tidak valid.
+Percobaan seperti:
+    hasil[grade] = hasil[grade] + data["nilai"] / hasil[grade] = hasil[grade] + 1
+Tidak valid karena sisi kanan/kiri bukan target assignment yang sah.
+
+4. SyntaxError lain saat mencoba assignment ke dua ekspresi sekaligus.
+
+5. NameError/UnboundLocalError dari percobaan sebelumnya terjadi ketika
+variabel hasil atau variabel grade tertentu belum pernah dibuat, tetapi
+langsung dipanggil saat return.
+
+6. Pada percobaan loop kedua sempat memakai:
+    for daftar in siswa:
+namun masih membaca:
+    data["grade"]
+Seharusnya variabel yang dipakai mengikuti variabel loop yang sedang aktif.
+
+7. Cara berpikir yang benar untuk rata-rata per grade:
+- hasil_total menyimpan total nilai per grade.
+- hasil_jumlah menyimpan jumlah siswa per grade.
+- rata-rata = total / jumlah.
+
+8. Target data:
+A = 190 / 2 = 95.0
+B = 80 / 1 = 80.0
+C = 275 / 4 = 68.75
+
+9. Konsep utama Day 29:
+- counter
+- accumulator
+- dictionary dinamis
+- agregasi berdasarkan kategori
+- memisahkan total dan jumlah
+- rata-rata = total / jumlah
