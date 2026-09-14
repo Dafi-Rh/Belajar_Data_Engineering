@@ -1,0 +1,109 @@
+CATATAN ERROR - DAY 30
+
+Materi:
+Function, dictionary, loop, pengelompokan berdasarkan grade, total nilai,
+jumlah siswa, dan rata-rata nilai.
+
+1. Percobaan:
+   hasil = total / jumlah
+
+   Error:
+   TypeError: unsupported operand type(s) for /: 'dict' and 'dict'
+
+   Pelajaran:
+   total dan jumlah adalah dictionary, jadi tidak bisa langsung dibagi.
+   Nilai harus diambil berdasarkan key grade:
+   total[grade] / jumlah[grade]
+
+
+2. Percobaan:
+   hasil = total[grade] / jumlah[grade]
+
+   Hasil:
+   68.75
+
+   Pelajaran:
+   Kode hanya menghasilkan rata-rata untuk grade terakhir yang sedang
+   tersimpan di variabel grade.
+
+
+3. Percobaan:
+   for rapor in siswsa:
+
+   Error:
+   NameError: name 'siswsa' is not defined. Did you mean: 'siswa'?
+
+   Pelajaran:
+   Salah ketik nama variabel. Yang benar adalah siswa.
+
+
+4. Setelah menjadi:
+   for rapor in siswa:
+
+   tetapi masih:
+   grade = data["grade"]
+
+   Hasil:
+   {'C': 68.75}
+
+   Pelajaran:
+   Variabel yang sedang diproses adalah rapor, sehingga harus:
+   grade = rapor["grade"]
+
+
+5. Percobaan membuat dictionary hasil akhir:
+
+   hasil_akhir = {
+       "A": total["A"], jumlah["A"], hasil["A"],
+       "B": total["B"], jumlah["B"], hasil["B"],
+       "C": total["C"], jumlah["C"], hasil["C"]
+   }
+
+   Error:
+   SyntaxError: ':' expected after dictionary key
+
+   Pelajaran:
+   Dictionary harus mempunyai pasangan key: value.
+
+
+6. Percobaan:
+
+   hasil_akhir[grade] = total, jumlah, hasil
+
+   Hasil:
+   Setiap grade berisi seluruh dictionary total, jumlah, dan hasil.
+
+   Pelajaran:
+   Yang dibutuhkan adalah nilai berdasarkan grade:
+   total[grade], jumlah[grade], hasil[grade]
+
+
+7. Percobaan terakhir berhasil:
+
+   for grade in total:
+       hasil_akhir[grade] = {
+           "total": total[grade],
+           "jumlah": jumlah[grade],
+           "rata_rata": hasil[grade]
+       }
+
+   Hasil:
+   {
+       'B': {'total': 80, 'jumlah': 1, 'rata_rata': 80.0},
+       'C': {'total': 275, 'jumlah': 4, 'rata_rata': 68.75},
+       'A': {'total': 190, 'jumlah': 2, 'rata_rata': 95.0}
+   }
+
+
+KESIMPULAN DAY 30:
+
+Berhasil membuat function yang:
+- mengelompokkan data siswa berdasarkan grade,
+- menghitung jumlah siswa setiap grade,
+- menghitung total nilai setiap grade,
+- menghitung rata-rata setiap grade,
+- menyimpan hasil dalam dictionary bertingkat.
+
+Catatan:
+File ini sengaja mempertahankan proses error dan perbaikannya sebagai
+ dokumentasi perjalanan belajar Python.
