@@ -1,0 +1,41 @@
+CATATAN ERROR - BELAJAR 31 DICTIONARY
+
+File latihan: Belajar-31-filter-dan-akses-dict.py
+Catatan ini mempertahankan error dan kesalahan logika dari percobaan asli sebagai bahan evaluasi belajar.
+
+1. SyntaxError: expected ':'
+Percobaan: 
+def rata_a(siswa)
+
+Pelajaran: 
+Pendefinisian sebuah function (def) wajib diakhiri dengan tanda titik dua (:).
+
+2. KeyError: 'grade'
+Percobaan: 
+Menjalankan fungsi rata_a tapi argumen yang dimasukkan adalah nested dictionary hasil rekapitulasi, bukan list of dictionary data mentah.
+
+Pelajaran: 
+Fungsi yang menggunakan iterasi "for data in siswa:" mengharapkan struktur data list. Ketika diberi objek dictionary rekapitulasi, kode menjadi kebingungan mencari key bernama "grade".
+
+3. TypeError: list indices must be integers or slices, not str
+Percobaan: 
+Di dalam loop "for data in siswa:", pengecekan if ditulis sebagai "if siswa["grade"] == "A":"
+
+Pelajaran: 
+Variabel "siswa" adalah sebuah List, sehingga indeksnya harus berupa angka (contoh: siswa[0]). Untuk memanggil "grade", harus menggunakan variabel sementara dari iterasi loop tersebut, yaitu "data". Penulisan yang benar adalah "if data["grade"] == "A":".
+
+4. NameError: name 'hasil' is not defined. Did you mean: 'hash'?
+Percobaan: 
+Langsung mengetik hasil["A"]["rata_rata"] di REPL sebelum variabel hasil dibuat.
+
+Pelajaran: 
+Python tidak menyimpan riwayat variabel secara ajaib jika belum dideklarasikan/diisi datanya terlebih dahulu di sesi tersebut. Variabel hasil harus didefinisikan dulu.
+
+5. IndentationError: unexpected indent
+Percobaan: 
+def rata_a(siswa):
+    hasil={}
+     hasil["A"]["rata_rata"] 
+
+Pelajaran: 
+Python sangat ketat soal spasi/indentasi. Baris hasil["A"]["rata_rata"] memiliki indentasi yang tidak sejajar dengan baris hasil={} di atasnya (kelebihan 1 spasi). Pastikan spasi (biasanya 4 spasi atau 1 tab) konsisten di dalam satu blok function.
