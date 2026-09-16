@@ -1,0 +1,77 @@
+==========================================
+Catatan Error - Day 32 (Read CSV & Average)
+==========================================
+
+Error 1: Mengakses Nested Dictionary
+------------------------------------
+Kode:
+print(siswa["B"])
+
+Hasil:
+{'nama': 'Joni', 'nilai': 65}
+
+Penyebab:
+Kunci "B" hanya mengambil dictionary tingkat pertama (data Joni secara keseluruhan).
+
+Solusi:
+Tambahkan kunci kedua di sebelah kunci pertama untuk mengambil nilainya secara spesifik:
+print(siswa["A"]["nilai"])  # Menghasilkan 90
+
+
+Error 2: IndentationError
+-------------------------
+Kode:
+for baris in reader:
+     baris["nilai"] = int(baris["nilai"])
+    print(baris)
+
+Pesan Error:
+IndentationError: unindent does not match any outer indentation level
+
+Penyebab:
+Jarak spasi / indentasi di awal baris kode di dalam perulangan `for` tidak sejajar.
+
+Solusi:
+Sejajarkan spasi/indentasi di dalam blok `for` (semuanya menjorok 4 spasi):
+for baris in reader:
+    baris["nilai"] = int(baris["nilai"])
+    print(baris)
+
+
+Error 3: NameError
+------------------
+Kode:
+for data in siswa:
+    total = total + data["nilai"]
+
+Pesan Error:
+NameError: name 'siswa' is not defined
+
+Penyebab:
+Variabel `siswa` belum didefinisikan karena data dibaca langsung dari `csv.DictReader(file)` tanpa menyimpan ke variabel `siswa` terlebih dahulu.
+
+Solusi:
+Gunakan perulangan pada objek `reader` dari `csv.DictReader`:
+with open("siswa.csv", mode="r") as file:
+    reader = csv.DictReader(file)
+    for data in reader:
+        total += int(data["nilai"])
+
+
+Error 4: Tipe Data String dari File CSV
+---------------------------------------
+Masalah:
+Data angka dari file CSV secara default dibaca sebagai string/teks (contoh: 'nilai': '90').
+
+Solusi:
+Konversi string menjadi integer menggunakan fungsi `int()` sebelum dilakukan operasi matematika:
+int(data["nilai"])
+
+
+==========================================
+Ringkasan Pembelajaran Day 32:
+- Membaca file CSV menggunakan modul bawaan Python `csv.DictReader`.
+- Melakukan konversi tipe data string ke integer dari file CSV.
+- Menghitung jumlah data (counter) dan total nilai (accumulator) dari file CSV.
+- Menghitung rata-rata nilai siswa dari data file CSV.
+==========================================
