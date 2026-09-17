@@ -1,0 +1,21 @@
+=== Catatan Pembelajaran & Error - Day 33 ===
+
+Materi Hari Ini:
+1. Membaca 1 file CSV menggunakan csv.reader().
+2. Fungsi `next(reader)` untuk melompati baris header ('id', 'nama', 'nilai', 'kelas').
+3. Akses elemen List berdasarkan indeks (`daftar[1]` untuk nama, `daftar[2]` untuk nilai, `daftar[3]` untuk kelas).
+4. Konversi tipe data string ke integer `int(daftar[2])` untuk pembandingan angka.
+5. Pemahaman alur ETL (Extract, Transform, Load) dasar & hubungannya dengan SQL.
+
+Error & Solusi yang Dialami:
+1. IndentationError: expected an indented block after 'with' statement
+   - Penyebab: Kode di bawah `with open(...)` belum diberi spasi/indentasi.
+   - Solusi: Merapikan spasi/indentasi pada baris `reader = csv.reader(file)`.
+
+2. ValueError: invalid literal for int() with base 10: 'nilai'
+   - Penyebab: Lupa memakai `next(reader)` sehingga baris header ('nilai') ikut diproses oleh `int()`.
+   - Solusi: Menambahkan `next(reader)` sebelum perulangan `for` untuk melompati header.
+
+3. SyntaxError / Error f-string pada print()
+   - Penyebab: Penggunaan tanda kurung kurawal `{}` tanpa awalan `f"` pada string `print()`.
+   - Solusi: Menggunakan format f-string yang benar: `print(f"{daftar[1]} tidak lulus dengan nilai {daftar[2]}")`.
